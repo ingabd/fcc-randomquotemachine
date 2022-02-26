@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [quotes, setQuotes] = useState([])
+  const [quote, setQuote] = useState({})
 
   const url = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
 
@@ -15,6 +16,7 @@ function App() {
       })
       .then(({quotes}) => {
         setQuotes(quotes)
+        setQuote(quotes[0])
       })
       .catch(err => {
       console.log(err)
@@ -22,26 +24,18 @@ function App() {
   }, [])
 
   const getQuote = () => {
-    return quotes[Math.floor(Math.random() * quotes.length)]
+    setQuote(quotes[Math.floor(Math.random() * quotes.length)])
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <h3>{JSON.stringify(getQuote())}</h3>
+    <div id="quote-box" className="box">
+      <div id="text">
+        <h3>{quote.quote}</h3>
+      </div>
+      <div id="author">
+        <h4>{quote.author}</h4>
+      </div>
+      <button onClick={getQuote}>Get Quote</button>
     </div>
   );
 }
