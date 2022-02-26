@@ -16,7 +16,7 @@ function App() {
       })
       .then(({quotes}) => {
         setQuotes(quotes)
-        setQuote(quotes[0])
+        setQuote(quotes[Math.floor(Math.random() * quotes.length)])
       })
       .catch(err => {
       console.log(err)
@@ -35,7 +35,8 @@ function App() {
       <div id="author">
         <h4>{quote.author}</h4>
       </div>
-      <button onClick={getQuote}>Get Quote</button>
+      <button id="new-quote" onClick={getQuote}>New Quote</button>
+      <a id="tweet-quote" onClick={getQuote}>tweet quote</a>
     </div>
   );
 }
