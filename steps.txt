@@ -1,0 +1,6 @@
+My rails:
+
+1. tembak API quote via hooks, 1 page aja di App.js, tampilin JSON.stringify(quotes)
+2. css ngikutin contoh
+3. tweet this quote
+4. ambil quote dari twitter
