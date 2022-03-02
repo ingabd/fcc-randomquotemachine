@@ -12,3 +12,16 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.btn {
+  background-color: #2ecc71;
+  border: 1px solid white;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  padding: 6px;
+}
+
+.btn:hover {
+    background-color: #0fa84f;
+}

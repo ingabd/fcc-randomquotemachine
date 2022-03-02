@@ -56,7 +56,7 @@ function App() {
         <h4>{quote.author}</h4>
       </div>
       <button id="new-quote" className="btn btn-primary" onClick={getQuote}>New Quote</button>
-      <a id="tweet-quote" href="twitter.com/intent/tweet">tweet quote</a>
+      <a className="btn" id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank">Tweet</a>
     </div>
   );
 }
